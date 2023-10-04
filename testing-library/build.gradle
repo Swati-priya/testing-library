@@ -36,12 +36,12 @@ android {
 
 // Place the version of your library here
 def getPublishVersionName = { ->
-    return '1.0.1'
+    return '1.0.0'
 }
 
 // Add the name of your library here
 def getArtifactId = { ->
-    return "testing-library"
+    return "demo-library"
 }
 
 // Add the group ID of your library here
@@ -51,7 +51,7 @@ def getGroupId = { ->
 
 // Prepare URL of maven package.
 def getGitHubUrl = { ->
-    return "https://maven.pkg.github.com/testing-library"
+    return "https://maven.pkg.github.com/Swati-priya/testing-library"
 }
 
 def properties = new Properties()
