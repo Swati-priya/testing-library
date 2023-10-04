@@ -41,17 +41,17 @@ def getPublishVersionName = { ->
 
 // Add the name of your library here
 def getArtifactId = { ->
-    return "pagenics-components"
+    return "testing-library"
 }
 
 // Add the group ID of your library here
 def getGroupId = { ->
-    return "com.zopsmart.pagenics.components"
+    return "com.library.testing_library"
 }
 
 // Prepare URL of maven package.
 def getGitHubUrl = { ->
-    return "https://maven.pkg.github.com/testing/pagenics-android"
+    return "https://maven.pkg.github.com/testing/testing-library"
 }
 
 def properties = new Properties()
