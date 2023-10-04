@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ZsButton">
+        <attr name="zs_borderWidth" format="dimension" />
+        <attr name="zs_borderColor" format="color" />
+        <attr name="zs_radius" format="dimension" />
+        <attr name="zs_backgroundColor" format="color" />
+        <attr name="zs_disableColor" format="color" />
+        <attr name="zs_focusColor" format="color" />
+        <attr name="zs_enabled" format="boolean" />
+        <attr name="zs_textColor" format="color" />
+        <attr name="zs_disabledTextColor" format="color" />
+        <attr name="zs_text" format="string" />
+        <attr name="zs_textSize" format="dimension" />
+        <attr name="zs_textAllCaps" format="reference|boolean" />
+        <attr name="zs_textStyle" format="integer">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+            <flag name="bold_italic" value="3" />
+        </attr>
+        <attr name="zs_iconPosition" format="enum">
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+            <enum name="top" value="3" />
+            <enum name="bottom" value="4" />
+        </attr>
+        <attr name="zs_drawableResource" format="reference" />
+        <attr name="zs_iconPadding" format="dimension" />
+        <attr name="zs_Padding" format="dimension" />
+        <attr name="zs_PaddingHorizontal" format="dimension" />
+        <attr name="zs_PaddingVertical" format="dimension" />
+        <attr name="zs_paddingLeft" format="dimension" />
+        <attr name="zs_paddingRight" format="dimension" />
+        <attr name="zs_paddingTop" format="dimension" />
+        <attr name="zs_paddingBottom" format="dimension" />
+        <attr name="zs_gravity" format="enum">
+            <enum name="center" value="0" />
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+            <enum name="top" value="3" />
+            <enum name="bottom" value="4" />
+        </attr>
+        <attr name="zs_fontFamily" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ZsBanner">
+        <attr name="zsBanner_backgroundColor" format="color" />
+        <attr name= "zsBanner_primary_button_style" format="reference"/>
+        <attr name= "zsBanner_secondary_button_style" format="reference"/>
+        <attr name= "zsBanner_single_button_style" format="reference"/>
+        <attr name="zsBanner_buttonAllCaps" format="reference|boolean" />
+        <attr name = "zsBanner_setBackgroundTintButtonPrimary" format = "string"/>
+        <attr name = "zsBanner_setBackgroundTintButtonSecondary" format = "string"/>
+        <attr name = "zsBanner_primary_button_text" format="string"/>
+        <attr name = "zsBanner_secondary_button_text" format="string"/>
+        <attr name = "zsBanner_single_button_text" format="string"/>
+        <attr name = "zsBanner_button_textSize" format="dimension"/>
+        <attr name="zsBanner_gravity" format="enum">
+            <enum name="center" value="17" />
+            <enum name="left" value="3" />
+            <enum name="right" value="5" />
+            <enum name="top" value="48" />
+            <enum name="bottom" value="80" />
+            <enum name="start" value="8388611" />
+            <enum name="end" value="8388613" />
+            <enum name="center_horizontal" value="1" />
+            <enum name="center_vertical" value="16" />
+            <enum name="no_gravity" value="0" />
+        </attr>
+        <attr name="zsBanner_left_image_ratio" format="float" />
+        <attr name="zsBanner_right_image_ratio" format="float" />
+        <attr name="zsBanner_fontFamily" format="reference" />
+        <attr name="zsBanner_backgroundDrawable" format="reference" />
+        <attr name="zsBanner_imageUrl" format="string" />
+        <attr name="zsBanner_IsBannerWithBackgroundImage" format="boolean" />
+        <attr name="zsBanner_IsBannerWithTwoButton" format="boolean" />
+        <attr name="zsBanner_IsBannerWithButton" format="boolean" />
+        <attr name="zsBanner_title" format="string" />
+        <attr name="zsBanner_titleSize" format="dimension" />
+        <attr name="zsBanner_titleColor" format="color" />
+        <attr name="zsBanner_titleAllCaps" format="reference|boolean" />
+        <attr name="zsBanner_title_fontFamily" format="reference" />
+        <attr name="zsBanner_titleStyle" format="integer">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+            <flag name="bold_italic" value="3" />
+        </attr>
+        <attr name="zsBanner_title_gravity" format="enum">
+            <enum name="center" value="17" />
+            <enum name="left" value="3" />
+            <enum name="right" value="5" />
+            <enum name="top" value="48" />
+            <enum name="bottom" value="80" />
+            <enum name="start" value="8388611" />
+            <enum name="end" value="8388613" />
+            <enum name="center_horizontal" value="1" />
+            <enum name="center_vertical" value="16" />
+            <enum name="no_gravity" value="0" />
+        </attr>
+        <attr name="zsBanner_subtitle" format="string" />
+        <attr name="zsBanner_subtitleSize" format="dimension" />
+        <attr name="zsBanner_subtitleColor" format="color" />
+        <attr name="zsBanner_subtitleAllCaps" format="reference|boolean" />
+        <attr name="zsBanner_subtitle_fontFamily" format="reference" />
+        <attr name="zsBanner_subtitleStyle" format="integer">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+            <flag name="bold_italic" value="3" />
+        </attr>
+        <attr name="zsBanner_subtitle_gravity" format="enum">
+            <enum name="center" value="17" />
+            <enum name="left" value="3" />
+            <enum name="right" value="5" />
+            <enum name="top" value="48" />
+            <enum name="bottom" value="80" />
+            <enum name="start" value="8388611" />
+            <enum name="end" value="8388613" />
+            <enum name="center_horizontal" value="1" />
+            <enum name="center_vertical" value="16" />
+            <enum name="no_gravity" value="0" />
+        </attr>
+        <attr name="zsBanner_description" format="string" />
+        <attr name="zsBanner_descriptionSize" format="dimension" />
+        <attr name="zsBanner_descriptionColor" format="color" />
+        <attr name="zsBanner_descriptionAllCaps" format="reference|boolean" />
+        <attr name="zsBanner_description_fontFamily" format="reference" />
+        <attr name="zsBanner_descriptionStyle" format="integer">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+            <flag name="bold_italic" value="3" />
+        </attr>
+        <attr name="zsBanner_description_gravity" format="enum">
+            <enum name="center" value="17" />
+            <enum name="left" value="3" />
+            <enum name="right" value="5" />
+            <enum name="top" value="48" />
+            <enum name="bottom" value="80" />
+            <enum name="start" value="8388611" />
+            <enum name="end" value="8388613" />
+            <enum name="center_horizontal" value="1" />
+            <enum name="center_vertical" value="16" />
+            <enum name="no_gravity" value="0" />
+        </attr>
+        <attr name="zs_banner_image_left_align" format="boolean" />
+        <attr name="zs_banner_image_right_align" format="boolean" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="message">text</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="subtitle">Subtitle</string>
+    <string name="title">Title</string>
+    <string name="description">description</string>
+    <string name="button_1">Button 1</string>
+    <string name="button_2">Button 2</string>
+    <string name="button_0">Button 0</string>
+</resources>

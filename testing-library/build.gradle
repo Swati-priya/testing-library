@@ -1,0 +1,106 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
+}
+
+android {
+    namespace 'com.library.testing_library'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 33
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+
+// Place the version of your library here
+def getPublishVersionName = { ->
+    return '1.0.1'
+}
+
+// Add the name of your library here
+def getArtifactId = { ->
+    return "pagenics-components"
+}
+
+// Add the group ID of your library here
+def getGroupId = { ->
+    return "com.zopsmart.pagenics.components"
+}
+
+// Prepare URL of maven package.
+def getGitHubUrl = { ->
+    return "https://maven.pkg.github.com/testing/pagenics-android"
+}
+
+def properties = new Properties()
+properties.load(new FileInputStream(rootProject.file("./github.properties")))
+
+publishing() {
+    publications {
+        bar(MavenPublication) {
+            groupId getGroupId()
+            artifactId getArtifactId()
+            version getPublishVersionName()
+            artifact("${buildDir}/outputs/aar/pagenics-components-release.aar")
+        }
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+
+            url = uri(getGitHubUrl())
+            credentials {
+                username = properties['GIT_USER_NAME']
+                password = properties['GIT_ACCESS_TOKEN']
+            }
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation fileTree(dir: 'libs', include: ['.jar', '.so', '.aar'])
+
+    // glide for setting image
+    implementation "com.github.bumptech.glide:glide:4.13.1"
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+}

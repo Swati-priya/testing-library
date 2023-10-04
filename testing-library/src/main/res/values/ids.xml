@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="iv_icon" type="id"/>
+    <item name="tv_button" type="id"/>
+    <item name="banner_button0" type="id"/>
+    <item name="banner_button1" type="id"/>
+    <item name="banner_button2" type="id"/>
+</resources>
