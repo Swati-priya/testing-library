@@ -1,11 +1,11 @@
-package com.zopsmart.pagenics.zsbuttonsample
+package com.library.myapplication.zsbuttonsample
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.zopsmart.pagenics.R
-import com.zopsmart.pagenics.databinding.BtnRecyclerListItemBinding
+import com.library.myapplication.R
+import com.library.myapplication.databinding.BtnRecyclerListItemBinding
 
 class ButtonSampleRVAdaptor() :
     RecyclerView.Adapter<ButtonSampleRVAdaptor.ButtonSampleViewHolder>() {
@@ -87,7 +87,7 @@ class ButtonSampleRVAdaptor() :
                             ResourcesCompat.getFont(context, com.zopsmart.pagenics.components.R.font.open_sans_bold)?.let{
                                 setFontFamily(it)
                             } */
-                            setFontFamilyRes(com.zopsmart.pagenics.components.R.font.open_sans_bold)
+                            setFontFamilyRes(com.library.testing_library.R.font.open_sans_bold)
                             ContextCompat.getDrawable(context, R.drawable.ic_backup)
                                 ?.let { setIcon(it) }
                             setBorderColor(

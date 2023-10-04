@@ -24,7 +24,7 @@ import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.snackbar.SnackbarContentLayout
-import com.zopsmart.pagenics.components.R
+import com.library.testing_library.R
 import com.zopsmart.pagenics.components.pagenics_constants.PagenicsConstants.Companion.DEFAULT_ACTION_TEXT
 import com.zopsmart.pagenics.components.pagenics_constants.PagenicsConstants.Companion.DEFAULT_MESSAGE_TEXT
 

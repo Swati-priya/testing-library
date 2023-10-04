@@ -1,4 +1,4 @@
-package com.zopsmart.pagenics.zsbuttonsample
+package com.library.myapplication.zsbuttonsample
 
 import android.graphics.Color
 import android.graphics.Typeface
@@ -7,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.library.myapplication.databinding.BannerRvListBinding
 import com.zopsmart.pagenics.components.pagenics_constants.PagenicsConstants
-import com.zopsmart.pagenics.databinding.BannerRvListBinding
 
 class BannerSampleRVAdaptor :
     RecyclerView.Adapter<BannerSampleRVAdaptor.BannerSampleViewHolder>() {
@@ -33,7 +33,7 @@ class BannerSampleRVAdaptor :
                             setTitleAllCaps(true)
                             setTitleColor(Color.WHITE)
                             setOnBackgroundImageClickListener { callToast() }
-                            setBannerFontFamilyRes(com.zopsmart.pagenics.components.R.font.open_sans_bold)
+                            setBannerFontFamilyRes(com.library.testing_library.R.font.open_sans_bold)
                             setSubTitle("This is subtitle")
                             setSubTitleAllCaps(false)
                             setSubtitleColor(Color.WHITE)
@@ -50,7 +50,7 @@ class BannerSampleRVAdaptor :
                             setTitle("Banner with background")
                             setTitleAllCaps(true)
                             setTitleColor(Color.WHITE)
-                            setBannerFontFamilyRes(com.zopsmart.pagenics.components.R.font.open_sans_bold)
+                            setBannerFontFamilyRes(com.library.testing_library.R.font.open_sans_bold)
                             setSubTitle("This is subtitle")
                             setSubTitleAllCaps(false)
                             setOnBackgroundImageClickListener { callToast() }
@@ -58,7 +58,7 @@ class BannerSampleRVAdaptor :
                             setSubtitleTextStyle(Typeface.NORMAL)
                             isBannerWithButton(true)
                             setSingleButtonText("Button")
-                            setSingleButtonStyle(com.zopsmart.pagenics.components.R.style.button_compact_1)
+                            setSingleButtonStyle(com.library.testing_library.R.style.button_compact_1)
                             setDescription("This is a banner description ")
                             setDescriptionColor(Color.WHITE)
                             setDescriptionTextStyle(Typeface.ITALIC)
@@ -71,7 +71,7 @@ class BannerSampleRVAdaptor :
                             setTitle("Banner with background")
                             setTitleAllCaps(true)
                             setTitleColor(Color.WHITE)
-                            setBannerFontFamilyRes(com.zopsmart.pagenics.components.R.font.open_sans_bold)
+                            setBannerFontFamilyRes(com.library.testing_library.R.font.open_sans_bold)
                             setSubTitle("This is subtitle")
                             setSubTitleAllCaps(false)
                             setSubtitleColor(Color.WHITE)
@@ -90,7 +90,7 @@ class BannerSampleRVAdaptor :
                             setTitle("Banner with background")
                             setTitleAllCaps(true)
                             setTitleColor(Color.WHITE)
-                            setBannerFontFamilyRes(com.zopsmart.pagenics.components.R.font.open_sans_bold)
+                            setBannerFontFamilyRes(com.library.testing_library.R.font.open_sans_bold)
                             setSubTitle("This is subtitle")
                             setSubTitleAllCaps(false)
                             setSubtitleColor(Color.WHITE)
@@ -110,7 +110,7 @@ class BannerSampleRVAdaptor :
                             setTitle("Banner with Left Image")
                             setTitleAllCaps(true)
                             setTitleColor(Color.BLACK)
-                            setBannerFontFamilyRes(com.zopsmart.pagenics.components.R.font.open_sans_bold)
+                            setBannerFontFamilyRes(com.library.testing_library.R.font.open_sans_bold)
                             setSubTitle("This is subtitle")
                             setSubTitleAllCaps(false)
                             setSubtitleColor(Color.BLACK)
@@ -129,14 +129,14 @@ class BannerSampleRVAdaptor :
                             setTitle("Banner with Left Image")
                             setTitleAllCaps(true)
                             setTitleColor(Color.BLACK)
-                            setBannerFontFamilyRes(com.zopsmart.pagenics.components.R.font.open_sans_bold)
+                            setBannerFontFamilyRes(com.library.testing_library.R.font.open_sans_bold)
                             setSubTitle("This is subtitle")
                             setSubTitleAllCaps(false)
                             setSubtitleColor(Color.BLACK)
                             setSubtitleTextStyle(Typeface.NORMAL)
                             isBannerWithButton(true)
                             setSingleButtonText("Button")
-                            setSingleButtonStyle(com.zopsmart.pagenics.components.R.style.button_compact_1)
+                            setSingleButtonStyle(com.library.testing_library.R.style.button_compact_1)
                             setOnLeftImageClickListener { callToast() }
                             isBannerImageLeftAlign(true)
                             setDescription("This is a banner description ")
@@ -151,7 +151,7 @@ class BannerSampleRVAdaptor :
                             setTitle("Banner with Left Image")
                             setTitleAllCaps(true)
                             setTitleColor(Color.BLACK)
-                            setBannerFontFamilyRes(com.zopsmart.pagenics.components.R.font.open_sans_bold)
+                            setBannerFontFamilyRes(com.library.testing_library.R.font.open_sans_bold)
                             setSubTitle("This is subtitle")
                             setSubTitleAllCaps(false)
                             setSubtitleColor(Color.BLACK)
@@ -172,7 +172,7 @@ class BannerSampleRVAdaptor :
                             setTitle("Banner with Right Image")
                             setTitleAllCaps(true)
                             setTitleColor(Color.BLACK)
-                            setBannerFontFamilyRes(com.zopsmart.pagenics.components.R.font.open_sans_bold)
+                            setBannerFontFamilyRes(com.library.testing_library.R.font.open_sans_bold)
                             setSubTitle("This is subtitle")
                             setSubTitleAllCaps(false)
                             setSubtitleColor(Color.BLACK)
@@ -190,7 +190,7 @@ class BannerSampleRVAdaptor :
                             setTitle("Banner with Right Image")
                             setTitleAllCaps(true)
                             setTitleColor(Color.BLACK)
-                            setBannerFontFamilyRes(com.zopsmart.pagenics.components.R.font.open_sans_bold)
+                            setBannerFontFamilyRes(com.library.testing_library.R.font.open_sans_bold)
                             setSubTitle("This is subtitle")
                             setSubTitleAllCaps(false)
                             setSubtitleColor(Color.BLACK)
@@ -210,7 +210,7 @@ class BannerSampleRVAdaptor :
                             setTitle("Banner with Right Image")
                             setTitleAllCaps(true)
                             setTitleColor(Color.BLACK)
-                            setBannerFontFamilyRes(com.zopsmart.pagenics.components.R.font.open_sans_bold)
+                            setBannerFontFamilyRes(com.library.testing_library.R.font.open_sans_bold)
                             setSubTitle("This is subtitle")
                             setSubTitleAllCaps(false)
                             setSubtitleColor(Color.BLACK)
@@ -220,7 +220,7 @@ class BannerSampleRVAdaptor :
                             setSecondaryButtonText("Button2")
                             setBackgroundTintButtonPrimary("#FB586C")
                             setBackgroundTintButtonSecondary("#6AB2AD")
-                            setPrimaryButtonStyle(com.zopsmart.pagenics.components.R.style.button_compact_1)
+                            setPrimaryButtonStyle(com.library.testing_library.R.style.button_compact_1)
                             setOnRightImageClickListener { callToast() }
                             setOnPrimaryButtonClickListener { callToast() }
                             setOnSecondaryButtonClickListener { callToast() }

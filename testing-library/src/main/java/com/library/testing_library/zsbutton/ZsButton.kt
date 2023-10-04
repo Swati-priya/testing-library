@@ -22,7 +22,7 @@ import androidx.annotation.FontRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import com.zopsmart.pagenics.components.R
+import com.library.testing_library.R
 
 class ZsButton @JvmOverloads constructor(
     context: Context,
