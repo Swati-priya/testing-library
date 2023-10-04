@@ -63,7 +63,7 @@ publishing() {
             groupId getGroupId()
             artifactId getArtifactId()
             version getPublishVersionName()
-            artifact("${buildDir}/outputs/aar/pagenics-components-release.aar")
+            artifact("${buildDir}/outputs/aar/testing-library-release.aar")
         }
     }
 
