@@ -51,7 +51,7 @@ def getGroupId = { ->
 
 // Prepare URL of maven package.
 def getGitHubUrl = { ->
-    return "https://maven.pkg.github.com/testing/testing-library"
+    return "https://maven.pkg.github.com/testing-library"
 }
 
 def properties = new Properties()
