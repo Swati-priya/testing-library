@@ -1,0 +1,37 @@
+name: Assemble library package
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  assemble:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Add secrets
+        env:
+          USER_NAME: ${{ secrets.GIT_USER_NAME }}
+          ACCESS_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
+        run: |
+          touch github.properties
+          echo -e "\nGIT_USER_NAME=$USER_NAME" >> github.properties
+          echo -e "\nGIT_ACCESS_TOKEN=$ACCESS_TOKEN" >> github.properties
+          cat github.properties
+
+      - name: assemble package
+        run: ./gradlew pagenics-components:assemble
+      - name: publish package
+        run: ./gradlew pagenics-components:publish
