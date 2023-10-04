@@ -32,6 +32,6 @@ jobs:
           cat github.properties
 
       - name: assemble package
-        run: ./gradlew pagenics-components:assemble
+        run: ./gradlew testing-library:assemble
       - name: publish package
-        run: ./gradlew pagenics-components:publish
+        run: ./gradlew testing-library:publish
