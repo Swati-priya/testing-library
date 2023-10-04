@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_grey"
+    tools:context=".zsbuttonsample.ButtonDialogFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_title_layout"
+        android:layout_width="@dimen/margin_0"
+        android:layout_height="@dimen/margin_58"
+        android:background="@color/white"
+        android:paddingEnd="@dimen/margin_32"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_sample_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_16"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/app_name"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/navigation_back"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/navigation_back"
+            android:layout_width="@dimen/margin_24"
+            android:layout_height="@dimen/margin_24"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:src="@drawable/ic_navigation_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_button_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_0"
+        android:layout_marginHorizontal="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_16"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/cl_title_layout"
+        tools:itemCount="5"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintBottom_toTopOf="@id/banner_layout"
+        tools:listitem="@layout/btn_recycler_list_item" />
+
+    <com.zopsmart.pagenics.components.zsbanner.ZsBanner
+        android:id="@+id/banner_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rv_button_recycler"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,58 +1,141 @@
-package com.library.myapplication
+package com.zopsmart.pagenics
 
+import android.graphics.Color
+import android.graphics.Typeface
+import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.widget.Toast
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
-import com.library.myapplication.databinding.ActivityMainBinding
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.OutlinedButton
+import androidx.compose.material.Text
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat
+import com.library.myapplication.R
+import com.zopsmart.pagenics.components.pagenics_constants.PagenicsConstants.Companion.DEFAULT_ACTION_TEXT
+import com.zopsmart.pagenics.components.pagenics_constants.PagenicsConstants.Companion.DEFAULT_FIRST_ACTION
+import com.zopsmart.pagenics.components.pagenics_constants.PagenicsConstants.Companion.DEFAULT_MESSAGE_TEXT
+import com.zopsmart.pagenics.components.pagenics_constants.PagenicsConstants.Companion.DEFAULT_SECOND_ACTION
+import com.zopsmart.pagenics.components.pagenics_constants.PagenicsConstants.Companion.DEFAULT_ZSMESSAGE
+import com.zopsmart.pagenics.components.pagenics_constants.PagenicsConstants.Companion.LISTVIEW
+import com.zopsmart.pagenics.components.pagenics_constants.PagenicsConstants.Companion.ZS_BANNER
+import com.zopsmart.pagenics.components.pagenics_constants.PagenicsConstants.Companion.ZS_BUTTON
+import com.zopsmart.pagenics.components.pagenics_constants.PagenicsConstants.Companion.ZS_MESSAGE
+import com.zopsmart.pagenics.components.pagenics_constants.PagenicsConstants.Companion.ZS_SNACKBAR
+import com.zopsmart.pagenics.components.zsmessage.ZsMessage
+import com.zopsmart.pagenics.components.zssnackbar.ZsSnackBar
+import com.library.myapplication.zsbuttonsample.ButtonDialogFragment
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityMainBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        setSupportActionBar(binding.toolbar)
-
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
-
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        setContent {
+            LazyColumn(modifier = Modifier.testTag(LISTVIEW).padding(8.dp)) {
+                itemsIndexed(
+                    mutableListOf<String>().apply {
+                        add(ZS_SNACKBAR)
+                        add(ZS_MESSAGE)
+                        add(ZS_BUTTON)
+                        add(ZS_BANNER)
+                    }
+                ) { index, data ->
+                    OutlinedButton(
+                        onClick = {
+                            when (index) {
+                                0 -> {
+                                    ZsSnackBar(this@MainActivity).apply {
+                                        actionTextColor(Color.BLUE)
+                                        withAction(DEFAULT_ACTION_TEXT) { showToast() }
+                                        cornerRadius(15f)
+                                        message(DEFAULT_MESSAGE_TEXT)
+                                        backgroundColor(Color.LTGRAY)
+                                        textColor(Color.BLACK)
+                                        padding(30)
+                                        animationAllowed(true)
+                                        // For adding gradiant
+                                        gradiantDrawable(
+                                            GradientDrawable(
+                                                GradientDrawable.Orientation.LEFT_RIGHT,
+                                                intArrayOf(
+                                                    setGradiantDrawableColor(R.color.soft_red),
+                                                    setGradiantDrawableColor(R.color.teal_200),
+                                                    setGradiantDrawableColor(R.color.lemon_yellow),
+                                                    setGradiantDrawableColor(R.color.bluish_green)
+                                                )
+                                            ).apply {
+                                                cornerRadius = 10f
+                                            }
+                                        )
+                                        show()
+                                    }
+                                }
+                                1 -> {
+                                    ZsMessage(this@MainActivity).apply {
+                                        action1TextColor(Color.BLUE)
+                                        withAction1(DEFAULT_FIRST_ACTION) { showToast() }
+                                        action2TextColor(Color.BLUE)
+                                        withAction2(DEFAULT_SECOND_ACTION) { dismiss() }
+                                        message(DEFAULT_ZSMESSAGE)
+                                        backgroundColor(Color.WHITE)
+                                        textColor(Color.BLACK)
+                                        setActionTextSize(15f)
+                                        setMsgTextSize(18f)
+                                        textTypeface(Typeface.MONOSPACE)
+                                        action1Typeface(Typeface.DEFAULT_BOLD)
+                                        action2Typeface(Typeface.DEFAULT_BOLD)
+                                        animationAllowed(false)
+                                        setIconRes(R.drawable.marguerite)
+                                        show()
+                                    }
+                                }
+                                2 -> {
+                                    ButtonDialogFragment.newInstance().show(supportFragmentManager, ZS_BUTTON)
+                                }
+                                3 -> {
+                                    ButtonDialogFragment.newInstance().show(supportFragmentManager, ZS_BANNER)
+                                }
+                            }
+                        },
+                        modifier = Modifier.fillMaxWidth(),
+                        shape = RoundedCornerShape(8.dp),
+                        colors = ButtonDefaults.buttonColors(
+                            backgroundColor = androidx.compose.ui.graphics.Color.LightGray,
+                            contentColor = androidx.compose.ui.graphics.Color.Black
+                        )
+                    ) {
+                        Text(
+                            text = data,
+                            modifier = Modifier,
+                            style = MaterialTheme.typography.body2,
+                            fontStyle = FontStyle.Normal,
+                            textAlign = TextAlign.Center
+                        )
+                    }
+                }
+            }
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
+    private fun setGradiantDrawableColor(color: Int) =
+        ContextCompat.getColor(this@MainActivity, color)
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+    private fun showToast() {
+        Toast.makeText(
+            applicationContext,
+            getString(R.string.hurray_toast),
+            Toast.LENGTH_LONG
+        ).show()
     }
 }

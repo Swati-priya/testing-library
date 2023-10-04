@@ -1,4 +1,4 @@
-package com.zopsmart.pagenics.zsbuttonsample
+package com.library.myapplication.zsbuttonsample
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.fragment.app.DialogFragment
+import com.library.myapplication.databinding.FragmentButtonBinding
 import com.zopsmart.pagenics.components.pagenics_constants.PagenicsConstants.Companion.ZS_BUTTON
-import com.zopsmart.pagenics.databinding.FragmentButtonBinding
 
 class ButtonDialogFragment : DialogFragment() {
     private var binding: FragmentButtonBinding? = null

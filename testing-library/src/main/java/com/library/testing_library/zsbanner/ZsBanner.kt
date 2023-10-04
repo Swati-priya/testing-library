@@ -28,7 +28,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
-import com.zopsmart.pagenics.components.R
+import com.library.testing_library.R
 import com.zopsmart.pagenics.components.pagenics_constants.PagenicsConstants.Companion.DESCRIPTION
 import com.zopsmart.pagenics.components.pagenics_constants.PagenicsConstants.Companion.SUBTITLE
 import com.zopsmart.pagenics.components.pagenics_constants.PagenicsConstants.Companion.TITLE
